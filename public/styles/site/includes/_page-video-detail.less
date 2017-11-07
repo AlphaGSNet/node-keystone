@@ -1,0 +1,59 @@
+.videodetailbox {
+  margin: 40px 0;
+  .video-one {
+    & >iframe {
+      width: 100%;
+      height: 560px;
+    }
+  }
+  .video-title {
+    font-size: @font-size-large;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: @pink;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    .yellow {
+      color: @light-yellow;
+    }
+  }
+  .video-desc {
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 0px;
+    .fa {
+      color: @brand-primary;
+      padding-left: 3px;
+    }
+  }
+}
+
+.biobox {
+  h1.title {
+    font-size: @font-size-large;
+    font-weight: 900;
+    font-family: "PoppinsBold", sans-serif;
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin-left: 26px;
+    > li {
+      margin: 40px 0 40px;
+      list-style-image: url('../images/bullet.png');
+      h3 {
+        color: @dark-orange;
+        font-weight: 600;
+        margin: 0 0 10px;
+      }
+      p {
+        font-weight: 300;
+        a {
+          color: @brand-primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

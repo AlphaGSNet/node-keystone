@@ -1,0 +1,79 @@
+.healer-header {
+  .row {
+    @include clearfix();
+  }
+  .col-md-5, .col-md-2 {
+    text-align: center;
+  }
+  .col-md-5 {
+    margin: 50px 0;
+  }
+  .col-md-2 {
+    .healer-photo {
+      margin: 0 auto;
+    }
+  }
+  p {
+    color: #ffffff;
+    font-family: 'SofiaProLight', sans-serif;
+    margin: 20px 40px
+  }
+  p.healer-desc {
+    font-family: "PoppinsSemiBold", sans-serif;
+  }
+}
+.healer-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 140px;
+  overflow: hidden;
+  img {
+    width: 140px;
+    height: auto;
+  }
+}
+.healer-title {
+  margin: 20px 0 150px;
+  text-align: center;
+  .title {
+
+  }
+}
+.healers {
+  .row {
+    @include clearfix();
+  }
+  .healerbox {
+
+    .healer-photo {
+      margin: -120px auto 10px;
+    }
+    >p {
+      padding: 0 40px;
+    }
+    p {
+      margin-bottom: 1.5em;
+      font-family: 'SofiaProLight', sans-serif;
+      font-size: @font-size-base;
+    }
+    .healer-name {
+      font-family: "PoppinsSemiBold", sans-serif;
+      font-size: @font-size-base;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px 0;
+      color: @color-text;
+    }
+    .healer-desc {
+      font-family: "Poppins", sans-serif;
+      font-size: @font-size-small;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      color: @color-text;
+    }
+    .address {
+      font-size: @font-size-small;
+    }
+  }
+}

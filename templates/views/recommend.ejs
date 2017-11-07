@@ -1,0 +1,54 @@
+<%
+pageTitle = "What we recommend for you"
+%>
+<% include ../layouts/top.ejs %>
+<% include ../layouts/header-masthead.ejs %>
+
+<section class="section section--yellow">
+  <div class="container wide">
+    <div class="recommendbox">
+      <h1 class="title">What we recommend for you</h1>
+      <img class="title" src="/images/text-recommend.png" alt="" />
+      <div class="divider"></div>
+      <div class="row">
+        <ul class="video-list">
+          <% posts.forEach(function(post, i) { %>
+            <li class="col-md-4 col-sm-6">
+              <div class="classbox">
+                <div class="video">
+                  <% if(post.image && post.image.url != undefined) { %>
+                    <img src="<%= post.image.url %>" />
+                  <% } else { %>
+                    <img src="/images/empty.png" />
+                  <% } %>
+                </div>
+                <p class="video-title">
+                  <a href="/lesson/<%= post._id.toString() %>/<%= post.slug %>" class="need-decode"><%= post.title %></a>
+                </p>
+                <span class="video-desc">
+                  <%= post.healingMode %>  ·  <%= post.healer.name.full %><i class="fa fa-clock-o"></i> <%= post.duration %>M
+                </span>
+                <p class="video-mode">
+                  <% if(post.tag == 'Meditation') { %>
+                    <span class="video-mode-orange">Meditation</span>
+                  <% } else if(post.tag =='Exercise') { %>
+                    <span class="video-mode-blue">Exercise</span>
+                  <% } else if(post.tag == 'Fireside Chat') { %>
+                    <span class="video-mode-black">Fireside Chat</span>
+                  <% } else if(post.tag == 'Meditation/Exercise') { %>
+                    <span class="video-mode-pink">Meditation/Exercise</span>
+                  <% } %>
+                  <% if(post.secondTag == 'Kid Friendly') { %>
+                    <span class="video-mode-green">Kid Friendly</span>
+                  <% } %>
+                </p>
+              </div>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<% include ../layouts/footer.ejs %>
+<% include ../layouts/bottom.ejs %>

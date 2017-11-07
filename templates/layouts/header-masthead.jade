@@ -1,0 +1,27 @@
+header.header.masthead
+	.stripe
+		.userinfo
+			if user
+				strong user.name
+				if user.canAccessKeystone
+					a(href='/keystone') Admin
+				a(href='/keystone/logout') SIGN OUT
+			else
+				a(href='/keystone/login') SIGN IN
+	.container
+		.row
+			.col-sm-4
+				ul.nav.nav-links
+					li
+						a.rclickable.rclickable--yellow-down(href="/") WELCOME
+					li
+						a.rclickable.rclickable--yellow-up(href="/classList") CLASSES
+				a(href="/") WELCOME
+			.col-sm-4
+				img.nav-brand(src="/images/logo.png", alt="")
+			.col-sm-4
+				ul.nav.nav-links
+					li
+						a.rclickable.rclickable--yellow-down(href="/healerList") HEALERS
+					li
+						a.rclickable.rclickable--yellow-up(href="/faq") FAQs

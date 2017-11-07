@@ -1,0 +1,42 @@
+<header class="header masthead">
+  <div class="stripe">
+    <div class="userinfo">
+      <% if (user) { %>
+        <strong><%= user.name.full %></strong>
+        <a href="/keystone/signout">SIGN OUT</a>
+        <% if (user.canAccessKeystone) { %>
+          <a href="/keystone">Admin</a>
+        <% } %>
+      <% } else { %>
+        <a href="/greeter">Login</a>
+      <% } %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+          <ul class="nav nav-links">
+            <li>
+              <a href="/" class="rclickable rclickable--yellow-down">WELCOME</a>
+            </li>
+            <li>
+              <a href="/lessons" class="rclickable rclickable--yellow-up">CLASSES</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <img class="nav-brand" src="/images/logo.png" alt="" />
+        </div>
+        <div class="col-sm-4">
+          <ul class="nav nav-links">
+            <li>
+              <a href="/healers" class="rclickable rclickable--yellow-down">HEALERS</a>
+            </li>
+            <li>
+              <a href="/faqs" class="rclickable rclickable--yellow-up">FAQs</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</header>

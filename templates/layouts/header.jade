@@ -1,0 +1,24 @@
+header.header.navbar
+	.container.wider
+		ul.navbar-collapse
+			li.odd
+				a(href="/") WELCOME
+			li.even.mobile-show
+				a(href="/classList") CLASSES
+			li.even.mobile-hide.dropdown
+				a.dropdown-toggle(href="/classList", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") CLASSES
+					span.caret
+				ul.dropdown-menu.row
+					li.col-sm-12
+						a(href="/classList") All Classes
+			li.odd
+				a(href="/healerList") HEALERS
+			li.even
+				a(href="/faq") FAQs
+		ul.nav.navbar-nav.navbar-right
+			if user
+				if user.canAccessKeystone
+					li: a(href='/keystone') Admin
+				li: a(href='/keystone/logout') SIGN OUT
+			else
+				li: a(href='/keystone/login') SIGN IN

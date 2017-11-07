@@ -1,0 +1,133 @@
+.header {
+  &.navbar {
+    margin-bottom: 0;
+  }
+  .navbar-collapse {
+    padding: 20px 0;
+  }
+  .nav.nav-links {
+    width: 138px;
+    margin: 100px auto 0;
+  }
+}
+
+.navbar {
+  @include clearfix;
+  .navbar-nav, .navbar-form {
+    float: left;
+  }
+  .navbar-collapse {
+    @include clearfix;
+  }
+  .caret {
+    color: @dark-orange;
+    border-width: 8px;
+    margin-top: -4px;
+  }
+}
+
+.nav.navbar-nav {
+  @include clearfix;
+  display: inline-block;
+  > li > a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: @font-size-base;
+    letter-spacing: 1.6px;
+    text-decoration: none;
+    &:hover,&:active {
+      background: none;
+    }
+  }
+  &.navbar-right {
+    float: right !important;
+    > li {
+      margin: 4px 4px 10px;
+    }
+    > li > a {
+      color: #000;
+      font-weight: 600;
+      font-size: @font-size-base;
+      letter-spacing: inherit;
+      padding: 0 15px;
+    }
+  }
+}
+
+.nav-rclickable {
+  > li {
+    float: left;
+    padding: 0 4px;
+    &.odd > a, &.odd > a:hover, &.odd > a:active {
+      background: url('../images/bg-navitem-down.png') no-repeat center !important;
+      margin-top: 2px;
+    }
+    &.even > a, &.even > a:hover, &.even > a:active {
+      background: url('../images/bg-navitem-up.png') no-repeat center !important;
+    }
+  }
+  > li > a {
+    text-align: center;
+    line-height: 39px;
+    display: inline-block;
+    color: @brand-primary;
+    padding: 4px 10px 0;
+  }
+  > li.dropdown {
+    .dropdown-menu {
+
+    }
+  }
+
+  &.navbar-nav > li > .dropdown-menu {
+    background: @brand-primary;
+    width: 439px;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.classes-nav {
+  float: left;
+  background-color: #f16725;
+  width: 200px;
+  margin-top: 100px;
+  padding: 25px 0px;
+  ul {
+
+  }
+}
+
+.classes-nav li {
+  > a {
+    color: @color-text;
+    text-decoration: none;
+    display: inline-block;
+    height: 32px;
+    padding: 10px 12px;
+    font-family: "PoppinsSemiBold", sans-serif;
+    font-size: @font-size-small;
+  }
+}
+.classes-nav li.active > a,
+.classes-nav li > a:hover {
+  background: url("../images/bg-navitem-up.png") no-repeat center !important;
+  background-size: 100% 32px !important;
+}
+
+.nav-rclickable.navbar-nav > li > .dropdown-menu > li {
+  > a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    height: 32px;
+    padding: 10px 12px;
+    font-family: "PoppinsSemiBold", sans-serif;
+    font-size: @font-size-small;
+  }
+}
+.nav-rclickable.navbar-nav > li > .dropdown-menu > li.active > a,
+.nav-rclickable.navbar-nav > li > .dropdown-menu > li > a:hover {
+  color: @color-text;
+  background: none !important;
+}

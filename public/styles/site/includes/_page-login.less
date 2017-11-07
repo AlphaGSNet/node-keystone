@@ -1,0 +1,61 @@
+header.login {
+  position: fixed;
+  background: url('../images/bg-stripe-black-both.png') no-repeat bottom;
+  background-size: 100% 40px;
+  height: 30px;
+  width: 100%;
+}
+.loginbox {
+  background: @brand-primary;
+  margin: 0 auto;
+  padding: 55px 0 20px;
+  width: 320px;
+  text-align: center;
+  color: white;
+  h1.title {
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-size: @font-size-medium;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+  input[type=text], input[type=password] {
+    background: url("../images/bg-navitem-up.png") no-repeat center 100%;
+    background-size: 100% 50px;
+    width: 230px;
+    height: 50px;
+    padding: 8px 12px;
+    border: none;
+    color: @color-text;
+    font-family: "PoppinsSemiBold", sans-serif;
+    font-size: @font-size-small;
+  }
+  .btn {
+    border: solid 2px white;
+    background-color: @brand-primary;
+    font-family: "PoppinsSemiBold", sans-serif;
+    font-size: @font-size-small;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 20px 8px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .btn:hover {
+    cursor: pointer;
+  }
+  p.link {
+    a {
+      font-family: "PoppinsSemiBold", sans-serif;
+      font-size: @font-size-mini;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+}

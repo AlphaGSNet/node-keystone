@@ -1,0 +1,26 @@
+<%
+pageTitle = "Faq"
+%>
+<% include ../layouts/top.ejs %>
+<% include ../layouts/header.ejs %>
+<section class="section section--black section-bottom-cog">
+  <div class="container faqwrapper">
+    <h1 class="faqwrapper__title hide">FAQs</h1>
+    <img class="title" src="/images/text-faq.png" />
+    <ul class="faqwrapper__list">
+      <% faqs.forEach(function(faq, i) { %>
+        <li>
+          <h3 class="title">
+            <%= faq.name %>
+          </h3>
+          <p class="need-decode">
+            <%= faq.content %>
+          </p>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</section>
+
+<% include ../layouts/footer.ejs %>
+<% include ../layouts/bottom.ejs %>

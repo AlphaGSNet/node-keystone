@@ -1,0 +1,60 @@
+.conditionbox {
+  text-align: center;
+  .subtitle {
+    margin: 20px 0;
+  }
+}
+
+.condition-list {
+  @include clearfix();
+  margin: 40px 0;
+  > li {
+    float: left;
+    width: ~"calc(100%/5)";
+    margin: 8px 0;
+    height: 230px;
+    &:nth-child(3n+1) {
+      .condition__icon {
+        background-color: @pink;
+      }
+    }
+    &:nth-child(3n+2) {
+      .condition__icon {
+        background-color: @dark-orange;
+      }
+    }
+    &:nth-child(3n+0) {
+      .condition__icon {
+        background-color: @brand-primary;
+      }
+    }
+  }
+  > li > a.condition {
+    color: @color-text;
+    text-decoration: none;
+    cursor: pointer;
+    .condition__icon {
+      display: block;
+      border-radius: 50%;
+      height: 158px;
+      width: 158px;
+      margin: 0 auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .condition__label {
+      font-family: 'Poppins', sans-serif;
+      margin: 10px 0;
+      padding: 0px 32px;
+      font-weight: 600;
+    }
+  }
+
+  .generate-conditions(10);
+  .generate-conditions(@n, @i: 1) when (@i =< @n) {
+    .condition__icon--@{i} {
+    background-image: url('../images/icon-condition-@{i}.png');
+    }
+    .generate-conditions(@n, (@i + 1));
+  }
+}

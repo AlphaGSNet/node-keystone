@@ -1,0 +1,43 @@
+<%
+pageTitle = "Sign Up"
+%>
+<% include ../layouts/top.ejs %>
+
+<header class="login"></header>
+<section class="section section--login">
+    <div class="loginbox">
+        <img src="images/logo.png" />
+        <h1 class="title">Sign up</h1>
+
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <form class="horizantal-form" action="/signup" method="post">
+            <div class="form-group">
+                <input type="text" name="firstName" placeholder="First Name" value="<%= submitted.firstName? submitted.firstName: '' %>"/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="lastName" placeholder="Last Name" value="<%= submitted.lastName? submitted.lastName: '' %>"/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="email" placeholder="Email" value="<%= submitted.email? submitted.email: '' %>"/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Passwrord"/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password_confirm" placeholder="Confirm"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-signup" value="sign up" />
+            </div>
+
+            <p class="link"><a href="/login">back to login</a></p>
+
+        </form>
+
+    </div>
+</section>
+
+<% include ../layouts/bottom.ejs %>

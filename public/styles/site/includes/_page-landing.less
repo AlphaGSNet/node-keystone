@@ -1,0 +1,103 @@
+.welcomebox {
+  margin: 5px 0;
+  @include clearfix();
+  .divider {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin-left: -40px;
+    height: 22px;
+    width: ~"calc(100% + 40px)";
+    background: url('../images/bg-divider.png') no-repeat;
+  }
+}
+.welcomebox__hand {
+  float: left;
+}
+.welcomebox__text {
+  padding: 53px 0 0;
+  img.title {
+    padding-left: 0px;
+  }
+  img.title.mobile {
+    display: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.welcomebox__text {
+  p {
+    font-size: @font-size-medium;
+    margin: 0 0 20px 20px;
+  }
+  b {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: @font-size-base;
+  }
+  .content {
+    margin-left: 225px;
+    margin-bottom: 15px;
+  }
+}
+.howtobox {
+  text-align: center;
+  width: 610px;
+  margin: 0 auto;
+  padding: 40px 0;
+  .title {
+    margin: 40px 0;
+  }
+  p {
+    font-size: @font-size-medium;
+  }
+}
+.diagrambox {
+  padding: 20px 0;
+  text-align: center;
+  min-width: 541px;
+  color: #000;
+  background: url('../images/hand-right.png') no-repeat left 243px,
+              url('../images/hand-left.png') no-repeat right bottom;
+}
+.diagrambox__circle {
+  width: 541px;
+  background: url('../images/two-circles-diagram.png') no-repeat center;
+  height: 876px;
+  margin: 0 auto;
+  text-align: center;
+  img {
+    margin: 20px auto;
+  }
+  .diagrambox__head, p, .ha {
+    font-family: 'PoppinsSemiBold', sans-serif;
+    font-weight: 600;
+    font-size: @font-size-medium;
+    margin: 0 0 15px;
+  }
+  p {
+    font-size: @font-size-base;
+  }
+  .diagrambox__head {
+    font-weight: 700;
+    font-size: @font-size-large;
+    letter-spacing: 1.4px;
+    margin: 10px 0;
+  }
+  .sg {
+    width: 100%;
+  }
+  .upper {
+    padding: 70px 0 20px;
+  }
+  .below {
+    padding: 25px 0 0;
+  }
+  .ha {
+    margin: 85px 0;
+    color: #dee66f;
+  }
+}
+.intuitionbox {
+  padding: 54px 0 44px;
+  text-align: center;
+}

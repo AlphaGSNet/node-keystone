@@ -1,0 +1,30 @@
+<%
+pageTitle = "Create a Path"
+%>
+<% include ../layouts/top.ejs %>
+<% include ../layouts/header-masthead.ejs %>
+
+<section class="section section--yellow">
+  <div class="container">
+    <div class="conditionbox">
+      <h1 class="title hide">HOW TO USE THIS COURSE</h1>
+      <img class="title" src="/images/text-selectcondition.png" alt="" />
+      <div class="divider"></div>
+      <p class="subtitle">
+        Select a healing path you wish to explore so that we may create your customized learning experience.
+      </p>
+      <ul class="condition-list">
+        <% plans.forEach(function(plan, i) { %>
+          <li>
+            <a href="/recommend/<%= plan._id.toString() %>" class="condition">
+              <span class="condition__icon condition__icon--<%= i + 1 %>"></span>
+              <p class="condition__label"><%= plan.name %></p>
+            </a>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</section>
+<% include ../layouts/footer.ejs %>
+<% include ../layouts/bottom.ejs %>

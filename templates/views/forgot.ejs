@@ -1,0 +1,22 @@
+<%
+pageTitle = "Forgot Password"
+%>
+<% include ../layouts/top.ejs %>
+<header class="login"></header>
+<section class="section section--login">
+  <div class="loginbox">
+    <img src="images/logo.png" />
+    <h1 class="title">Input your email</h1>
+    <form class="horizantal-form">
+      <div class="form-group">
+        <input type="text" name="email" placeholder="Email"/>
+      </div>
+      <div class="form-group">
+        <input type="button" class="btn btn-forgot" value="send" />
+      </div>
+      <p class="link"><a href="login.html">return to sign in</a></p>
+    </form>
+  </div>
+</section>
+
+<% include ../layouts/bottom.ejs %>

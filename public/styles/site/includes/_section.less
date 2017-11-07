@@ -1,0 +1,72 @@
+.section {
+  padding: 50px 0;
+  p {
+    font-family: 'SofiaProLight', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
+}
+.section--black {
+  background: #060708;
+  color: #fff;
+  a {
+    color: @color-link;
+  }
+}
+.section--orange {
+  background: @dark-orange;
+  color: #fff;
+  a {
+    color: @color-link;
+  }
+}
+.section--yellow {
+  background: @yellow;
+}
+.section--red {
+  background: @brand-thirdary;
+  color: #f5eee0;
+  @include aftercontent();
+  &:after {
+    background: url('../images/bg-stripe-red-both.png') no-repeat bottom;
+    background-size: 100% auto;
+    width: 100%;
+    height: 38px;
+    left: 0;
+    bottom: -5px;
+  }
+}
+.section--cog {
+  @include beforecontent();
+  &:before {
+    background: url('../images/bg-stripe-cog-down.png') repeat-x;
+    width: 100%;
+    height: 47px;
+    left: 0;
+    top: -32px;
+  }
+}
+.section-bottom-cog {
+  @include aftercontent();
+  &:after {
+    background: url('../images/bg-stripe-cog-down.png') @brand-primary repeat-x 0 -5px;
+    width: 100%;
+    height: 47px;
+    left: 0;
+    bottom: -5px;
+  }
+}
+.section--login {
+  padding: 0;
+}
+.section--blue {
+  background: @brand-primary;
+  color: #fff;
+}
+.section--pink {
+  background: @pink;
+  color: #fff;
+}
+.padding-bottom-100 {
+  padding-bottom: 100px;
+}

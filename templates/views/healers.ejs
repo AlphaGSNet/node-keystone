@@ -1,0 +1,56 @@
+<%
+pageTitle = "Healers";
+colors= ["", "orange", "blue", "pink"];
+%>
+<% include ../layouts/top.ejs %>
+<% include ../layouts/header.ejs %>
+<section class="section section--black">
+  <div class="container wide healer-header">
+  <div class="row">
+    <div class="col-md-5"><img class="title" src="/images/text-healer1.png" /></div>
+    <div class="col-md-2"><div class="healer-photo"><img src="/images/healers/nick.png" /></div></div>
+    <div class="col-md-5"><img class="title" src="/images/text-healer2.png" /></div>
+  </div>
+  <p class="healer-desc">Nick Polizzi has been making documentary films for the past ten years. The titles he has been a part of include‚ The Sacred Science‚ Simply Raw – Reversing Diabetes in 30 Days‚ and The Tapping Solution.</p>
+  <p>While creating his most recent film, The Sacred Science, his fascination with the healing remedies of the tribes he observed led him to expand his scope and explore the traditional medicines of many remote cultures across the Americas. Nick's work stems from a calling to honor, preserve, and protect the ancient knowledge and rituals of the indigenous peoples of the world.</p>
+  </div>
+</section>
+
+<% healers.forEach(function(healer, i) { %>
+
+  <% if(i==0) { %>
+    <section class="section section--cog padding-bottom-100">
+      <div class="container wide healers">
+        <div class="healer-title">
+          <img class="title" src="/images/text-healers.png" />
+        </div>
+        <div class="row">
+  <% } else if(i%2 == 0) { %>
+        </div>
+      </div>
+    </section>
+    <section class="section section--<%= colors[(i/2)%4] %> padding-bottom-100">
+      <div class="container wide healers">
+        <div class="row">
+  <% } %>
+
+    <div class="col-sm-6 healerbox">
+      <div class="healer-photo">
+        <img src="<%= healer.photo.url %>" />
+      </div>
+      <h3 class="healer-name"><%= healer.name.full %></h3>
+      <p class="healer-desc need-decode"><%= healer.title %></p>
+      <p class="need-decode"><%= healer.content %></p>
+      <p class="address">
+        <span class="need-decode"><%= healer.address %></span>
+      </p>
+    </div>
+
+<% }); %>
+
+  </div>
+  </div>
+</section>
+
+<% include ../layouts/footer.ejs %>
+<% include ../layouts/bottom.ejs %>

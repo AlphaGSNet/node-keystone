@@ -1,0 +1,48 @@
+<%
+pageTitle = "Video screen"
+%>
+<% include ../layouts/top.ejs %>
+<% include ../layouts/header.ejs %>
+
+<section class="section section--black">
+  <div class="container">
+    <div class="videodetailbox">
+      <div class="video-one need-decode"><%= post.content %></div>
+      <p class="video-title"><%= post.title %></p>
+      <p class="video-desc"><%= post.healingMode %>  ·  <%= post.healer.name.full %><i class="fa fa-clock-o"></i> <%= post.duration %>M</p>
+    </div>
+  </div>
+</section>
+<section class="section section--cog">
+  <div class="container">
+    <div class="biobox">
+      <h1 class="title">Description</h1>
+      <p class="need-decode"><%= post.description %></p>
+      <% if(post.downloads.video || post.downloads.audioOnly || post.downloads.additionalMaterials || post.downloads.transcript || post.downloads.youtube) { %>
+        <ul>
+          <li>
+            <h3 class="orange">For More Info Click on the Below Link(s):</h3>
+            <% if(post.downloads.video) { %>
+              <p>To Download Video <a href="<%= post.downloads.video %>" target="_blank">Click Here</a></p>
+            <% } %>
+            <% if(post.downloads.audioOnly) { %>
+              <p>To Download Audio Only <a href="<%= post.downloads.audioOnly %>" target="_blank">Click Here</a></p>
+            <% } %>
+            <% if(post.downloads.additionalMaterials) { %>
+              <p>To Download Class Materials <a href="<%= post.downloads.additionalMaterials %>" target="_blank">Click Here</a></p>
+            <% } %>
+            <% if(post.downloads.transcript) { %>
+              <p>To Download Transcript <a href="<%= post.downloads.transcript %>" target="_blank">Click Here</a></p>
+            <% } %>
+            <% if(post.downloads.youtube) { %>
+              <p>To Watch on Youtube <a href="<%= post.downloads.youtube %>" target="_blank">Click Here</a></p>
+            <% } %>
+          </li>
+        </ul>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<% include ../layouts/footer.ejs %>
+<% include ../layouts/bottom.ejs %>

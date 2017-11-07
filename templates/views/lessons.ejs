@@ -1,0 +1,64 @@
+<%
+pageTitle = "Classes"
+%>
+<% include ../layouts/top.ejs %>
+<% include ../layouts/header.ejs %>
+
+<section class="section section--yellow">
+  <div class="container wider">
+    <div class="classes-nav">
+      <ul>
+        <li class="<%= selectedCategory? '': 'active' %>"><a href="/lessons">All Classes</a></li>
+        <% categories.forEach(function(category, i) { %>
+          <li class="<%= selectedCategory && category._id.toString()==selectedCategory._id.toString() ? 'active' : '' %>">
+            <a href="/lessons/<%= category._id.toString() %>/<%= category.slug %>"><%= category.name %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+    <div class="classes-box">
+      <h1 class="title"><%= selectedCategory? selectedCategory.name: 'All' %></h1>
+      <div class="row">
+        <ul class="video-list">
+          <% posts.forEach(function(post, i) { %>
+            <li class="col-md-4 col-sm-6">
+              <div class="classbox">
+                <a href="/lesson/<%= post._id.toString() %>/<%= post.slug %>">
+                  <div class="video">
+                    <% if(post.image && post.image.url != undefined) { %>
+                      <img src="<%= post.image.url %>" />
+                    <% } else { %>
+                      <img src="/images/empty.png" />
+                    <% } %>
+                  </div>
+                </a>
+                <p class="video-title">
+                  <a href="/lesson/<%= post._id.toString() %>/<%= post.slug %>" class="need-decode"><%= post.title %></a>
+                </p>
+                <span class="video-desc">
+                  <%= post.healingMode %>  ·  <%= post.healer.name.full %><i class="fa fa-clock-o"></i> <%= post.duration %>M
+                </span>
+                <p class="video-mode">
+                  <% if(post.tag == 'Meditation') { %>
+                    <span class="video-mode-orange">Meditation</span>
+                  <% } else if(post.tag =='Exercise') { %>
+                    <span class="video-mode-blue">Exercise</span>
+                  <% } else if(post.tag == 'Fireside Chat') { %>
+                    <span class="video-mode-black">Fireside Chat</span>
+                  <% } else if(post.tag == 'Meditation/Exercise') { %>
+                    <span class="video-mode-pink">Meditation/Exercise</span>
+                  <% } %>
+                  <% if(post.secondTag == 'Kid Friendly') { %>
+                    <span class="video-mode-green">Kid Friendly</span>
+                  <% } %>
+                </p>
+              </div>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="let-us"><a href="/plans"></a></div>
+<% include ../layouts/footer.ejs %>
+<% include ../layouts/bottom.ejs %>
